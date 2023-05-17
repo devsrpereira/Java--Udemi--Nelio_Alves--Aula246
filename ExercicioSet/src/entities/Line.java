@@ -29,6 +29,19 @@ public class Line {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Line line)) return false;
+
+        return getName().equals(line.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return getName().hashCode();
+    }
+
+    @Override
     public String toString() {
         return "name: " + name + ", time:" + moment;
     }

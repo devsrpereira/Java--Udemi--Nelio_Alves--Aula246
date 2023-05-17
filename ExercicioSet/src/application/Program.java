@@ -20,6 +20,8 @@ public class Program {
             String line = br.readLine();
             System.out.println("Itens no conjunto lineSet:");
 
+            int logs = 0;
+
             while(line != null){
                 String [] field = line.split(" ");
                 String name = field[0];
@@ -27,19 +29,15 @@ public class Program {
 
                 Line obj = new Line(name,moment);
                 lineSet.add(obj);
+                logs ++;
 
                 System.out.println(obj);
                 line = br.readLine();
             }
 
             System.out.println();
-
-            Set<String> nameList = new HashSet<>();
-            for (Line name : lineSet) {
-                nameList.add(name.getName());
-            }
-            System.out.println("Total of logs: " + lineSet.size());
-            System.out.println("Total of users: " + nameList.size());
+            System.out.println("Total of logs: " + logs);
+            System.out.println("Total of users: " + lineSet.size());
         }
         catch (IOException e){
             System.out.println("Error: " + e.getMessage());
